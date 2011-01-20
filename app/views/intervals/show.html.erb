@@ -10,18 +10,18 @@
 <ul>
 	<li>Session Type: (9 name types so far)</li>
 	<li>Task: <%= @interval.task_name %></li>
-	<li>Start Time (24 hr): <%= @interval.start_time %></li>
-	<li>End Time (24 hr): <%= @interval.end_time %></li>				
-	<li>Duration: hh:mm:ss: <%= @interval.end_time - @interval.start_time %></li>
+	<li>Start Time (24 hr): <%= @interval.start_time.strftime("%T") %></li>
+	<li>End Time (24 hr): <%= @interval.end_time.strftime("%T") %></li>				
+	<li>Duration: hh:mm:ss: <%= @interval.end_time.strftime("%T").to_i -                @interval.start_time.strftime("%T").to_i %></li>
 </ul>
 
 <h2>Source</h2>
 <ul id="Source">
 	<li>File Name: <%= @interval.filename %></li>
 	<li>Day Number: </li>
-	<li>Date: yyyy-mm-dd <% @interval.start_time %></li>
+	<li>Date: <%= @interval.start_time.strftime("%F") %></li>
 	<li>Camera Angle: <%= @interval.camera_angle %></li>
-	<li>Start Time (24 hr): <%= @interval.start_time %></li>
+	<li>Start Time (24 hr): <%= @interval.start_time.strftime("%T") %></li>
 </ul>
 
 <div>
